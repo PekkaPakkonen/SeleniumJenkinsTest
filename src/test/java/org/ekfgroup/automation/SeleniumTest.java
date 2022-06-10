@@ -18,7 +18,7 @@ public class SeleniumTest {
         DesiredCapabilities caps = new DesiredCapabilities();
         caps.setBrowserName("firefox");
 
-        driver = new RemoteWebDriver(new URL("http://localhost:4444"), caps);
+        driver = new RemoteWebDriver(new URL("http://172.17.0.3:4444"), caps);
     }
 
     @Test
