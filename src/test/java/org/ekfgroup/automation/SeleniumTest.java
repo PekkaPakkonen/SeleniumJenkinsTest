@@ -3,6 +3,7 @@ package org.ekfgroup.automation;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.remote.DesiredCapabilities;
 import org.openqa.selenium.remote.RemoteWebDriver;
+import org.testng.Assert;
 import org.testng.annotations.AfterTest;
 import org.testng.annotations.BeforeTest;
 import org.testng.annotations.Test;
@@ -25,7 +26,7 @@ public class SeleniumTest {
     public void browse() throws Exception {
              driver.get("https://ekfgroup.com/");
              Thread.sleep(5000);
-             System.out.println(driver.getTitle());
+             Assert.assertEquals(driver.getTitle(),"kek");
     }
 
     @AfterTest
