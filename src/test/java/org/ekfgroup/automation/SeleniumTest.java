@@ -22,8 +22,10 @@ public class SeleniumTest {
     }
 
     @Test
-    public void browse() {
+    public void browse() throws Exception {
              driver.get("https://ekfgroup.com/");
+             Thread.sleep(5000);
+             System.out.println(driver.getTitle());
     }
 
     @AfterTest
