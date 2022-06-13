@@ -22,13 +22,13 @@ public class SeleniumTest {
         DesiredCapabilities caps = new DesiredCapabilities();
         caps.setBrowserName("firefox");
 
-        driver = new RemoteWebDriver(new URL("http://localhost:4444"), caps);
+        driver = new RemoteWebDriver(new URL("http://172.17.0.2:4444"), caps);
     }
 
     @Test
     public void browse() throws Exception {
-             driver.get("https://ekfgroup.com/");
-             Thread.sleep(5000);
+             driver.get("http://ekfgroup.com");
+             new WebDriverWait(driver, 10).until(ExpectedConditions.elementToBeClickable(By.cssSelector(".header-menu-main .nav-item:first-child")));
              System.out.println(driver.getTitle());
              driver.findElement(By.cssSelector(".header-menu-main .nav-item:first-child")).click();
              new WebDriverWait(driver, 10).until(ExpectedConditions.urlToBe("https://ekfgroup.com/solutions"));
@@ -36,7 +36,7 @@ public class SeleniumTest {
 
     @AfterTest
     public void finish() {
-        
+        driver.quit();
     }
 
 }
