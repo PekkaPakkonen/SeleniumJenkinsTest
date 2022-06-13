@@ -1,8 +1,11 @@
 package org.ekfgroup.automation;
 
+import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.remote.DesiredCapabilities;
 import org.openqa.selenium.remote.RemoteWebDriver;
+import org.openqa.selenium.support.ui.ExpectedConditions;
+import org.openqa.selenium.support.ui.WebDriverWait;
 import org.testng.Assert;
 import org.testng.annotations.AfterTest;
 import org.testng.annotations.BeforeTest;
@@ -27,6 +30,8 @@ public class SeleniumTest {
              driver.get("https://ekfgroup.com/");
              Thread.sleep(5000);
              System.out.println(driver.getTitle());
+             driver.findElement(By.cssSelector(".header-menu-main .nav-item:first-child")).click();
+             new WebDriverWait(driver, 10).until(ExpectedConditions.urlToBe("https://ekfgroup.com/solutions"));
     }
 
     @AfterTest
