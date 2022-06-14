@@ -32,6 +32,7 @@ public class SeleniumTest {
              System.out.println(driver.getTitle());
              driver.findElement(By.cssSelector(".header-menu-main .nav-item:first-child")).click();
              new WebDriverWait(driver, 10).until(ExpectedConditions.urlToBe("https://ekfgroup.com/solutions"));
+             System.out.println(driver.getCurrentUrl());
     }
 
     @AfterTest
