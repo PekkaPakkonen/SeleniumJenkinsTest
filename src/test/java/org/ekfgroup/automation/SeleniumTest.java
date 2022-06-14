@@ -22,7 +22,7 @@ public class SeleniumTest {
         DesiredCapabilities caps = new DesiredCapabilities();
         caps.setBrowserName("firefox");
 
-        driver = new RemoteWebDriver(new URL("http://172.17.0.2:4444"), caps);
+        driver = new RemoteWebDriver(new URL("http://172.17.0.2:5900"), caps);
     }
 
     @Test
