@@ -2,7 +2,9 @@ package org.ekfgroup.automation;
 
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.firefox.FirefoxBinary;
 import org.openqa.selenium.firefox.FirefoxDriver;
+import org.openqa.selenium.firefox.FirefoxOptions;
 import org.openqa.selenium.remote.DesiredCapabilities;
 import org.openqa.selenium.remote.RemoteWebDriver;
 import org.openqa.selenium.support.ui.ExpectedConditions;
@@ -22,8 +24,11 @@ public class SeleniumTest {
     public void before() throws Exception {
         DesiredCapabilities caps = new DesiredCapabilities();
         caps.setBrowserName("firefox");
-
-        driver = new FirefoxDriver();
+        FirefoxBinary firefoxBinary = new FirefoxBinary();
+        FirefoxOptions options = new FirefoxOptions();
+        options.setBinary(firefoxBinary);
+        options.setHeadless(true);  // <-- headless set here
+        driver = new FirefoxDriver(options);
     }
 
     @Test
