@@ -2,6 +2,7 @@ package org.ekfgroup.automation;
 
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.firefox.FirefoxDriver;
 import org.openqa.selenium.remote.DesiredCapabilities;
 import org.openqa.selenium.remote.RemoteWebDriver;
 import org.openqa.selenium.support.ui.ExpectedConditions;
@@ -22,7 +23,7 @@ public class SeleniumTest {
         DesiredCapabilities caps = new DesiredCapabilities();
         caps.setBrowserName("firefox");
 
-        driver = new RemoteWebDriver(new URL("http://172.17.0.2:4444"), caps);
+        driver = new FirefoxDriver();
     }
 
     @Test
